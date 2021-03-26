@@ -14,11 +14,9 @@ const Container = styled.SafeAreaView`
 
 const HomeScreen = () => {
   const { data, error } = useSWR(
-    'https://pixabay.com/api/?key=19764031-d6578a0973ae47b61032aed65&orientation=vertical&category=travel&safesearch=true&editors_choice=true',
+    'https://pixabay.com/api/?key=19764031-d6578a0973ae47b61032aed65&orientation=vertical&category=people&safesearch=true&editors_choice=true',
     fetcher
   );
-
-  console.log('La data es: ', data);
 
   return (
     <Container>

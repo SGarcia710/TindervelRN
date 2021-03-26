@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text } from 'react-native';
+import { useSharedValue } from 'react-native-reanimated';
 import styled from 'styled-components/native';
 import { ImageCard } from '.';
 
@@ -10,6 +11,7 @@ const Container = styled.View`
 
 const Swipeable = ({ data }) => {
   const [_data, setData] = useState(data);
+  const scale = useSharedValue(1);
 
   const handleSwipe = useCallback(
     (destination) => {
@@ -29,6 +31,7 @@ const Swipeable = ({ data }) => {
               isOnTop={isOnTop}
               data={landscape}
               handleSwipe={handleSwipe}
+              scale={scale}
             />
           );
         })
